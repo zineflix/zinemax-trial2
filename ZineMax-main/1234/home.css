@@ -1,691 +1,160 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+  <html lang="en">
 
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <link rel="apple-touch-icon" href="img/ZineMax_1.png">
+      <title>ZINEMAX</title>
+      <link rel="stylesheet" href="1234/home.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="manifest" href="manifest.json">
+      <link rel="preload" href="1234/home.js" as="home">
+      <link href="https://db.onlinewebfonts.com/c/25ee966fb81cd61ffdfb393e81c7bf4b?family=Electronica+Display+Outline" rel="stylesheet">
+      <link href="https://db.onlinewebfonts.com/c/6aa9c3aef30b81ee339ac2df6fee25f5?family=Electronica+Display+Solid" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">      
+  </head> 
+    
+  <body>
+  <!-- Google tag (gtag.js) -->
+ 
+    <!-- For Header -->  
+<nav>
+    <!-- Logo -->
+    <img id="logo" src="https://zinemax.netlify.app/img/ZineMax.png" alt="Logo">
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #111;
-  overflow: hidden; /* Prevents the scrollbar from showing */
-}
+    <!-- Menu Button (visible only on mobile) -->
+    <span class="menu-btn" id="menu-btn">Menu</span>
 
-body::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Webkit-based browsers */
-}
+    <!-- Navigation Menu -->
+    <ul id="menu">
+      <li><a href="index.html" class="active">HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="movies.html">MOVIES <i class="fa fa-film" aria-hidden="true"></i></a></li>
+      <li><a href="tvshows_page.html">TV-SHOWS <i class="fas fa-tv"></i></a></li>
+      <li><a href="sorting.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
+      <li><a href="search.html">SEARCH <i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav> 
+    
+  <header class="banner">
 
-html {
-  scroll-behavior: smooth;
-  overflow: scroll; /* Makes sure the scroll functionality works even if the scrollbar is hidden */
-}
-  
+        <div class="banner__contents">
+            <h1 class="banner__title">Loading...</h1> <!-- This will be replaced dynamically -->
+            <div class="banner__buttons">
+                <!-- Play Button -->
+                <button class="banner__button" id="play-button">PLAY</button>
+            </div>
+            <h1 class="banner__description">
+                Loading description...
+            </h1> <!-- This will be replaced dynamically -->
+        </div>   
 
-  .row__poster {
-    width: 200px; /* Increased width for larger posters */
-    object-fit: contain;
-    margin-right: 10px;
-    transition: transform 450ms;
-  }
-  
-  .row__posters {
-    display: flex;
-    overflow: hidden;
-    padding: 20px;
-    position: relative;
-  }
-  
-  .row__poster:hover {
-    transform: scale(1.08);
-  }
-  
-  .row__posters::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .row__posterLarge {
-    max-height: 250px;
-  }
-  
-  .row__posterLarge:hover {
-    transform: scale(1.09);
-  }
-  
-  .row {
-    color: white;
-    margin-left: 20px;
-  }
-  
-/* Banner */
-.banner {
-  background-size: cover;
-  background-position: center center;
-  color: white;
-  object-fit: contain;
-  height: 500px;
-}
+        <!-- Floating Message -->
+  <div id="floating-message">
+    <i class="fa-solid fa-triangle-exclamation"></i><h2>Disclaimer!</h2><br>
+      This site does not host any files on its server. All content displayed on this site is provided by third-party sites and services. We don't have control on any content, or services provided by their sites. If you have any questions or concerns about the content hosted by third-party sites, please contact the site owner or administrator directly!
+      <button onclick="closeMessage()">OK</button>
+  </div>      
+        
+        <div class="banner--fadeBottom"></div>
+      </header> 
 
-.banner__contents {
-  margin-left: 30px;
-  padding-top: 140px;
-  height: 190px;
-}
+      <!-- Popular Movies Section -->
+      <div class="row">
+        <h4>POPULAR<span class="movies">M O V I E S</span></h4> 
+            <div class="row__posters" id="popularMovies">
+            <!-- Movie posters will be added here dynamically -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>       
 
-/* Default styles for larger screens */
-.banner__title {
-  font-size: 3rem;  /* Default font size */
-  font-weight: 900;  /* Bold font */
-  padding-bottom: 0.2rem;  /* Space below the title */
-}
+      <!-- Popular TV Series Section -->
+      <div class="row">
+        <h4>POPULAR<span class="tv-series">T V  S E R I E S</span></h4> 
+            <div class="row__posters" id="popularTvSeries">
+            <!-- Popular TV show posters will be added dynamically -->
+        </div>
+        <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>    
+ 
+      <!-- Popular K-Drama -->
+      <div class="row">
+          <h2><span class="k-drama">K-Drama</span></h2>
+          <div class="row__posters" id="popularKdrama">
+              <!-- Movie posters will be populated here -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>    
 
-.banner__description {
-  width: 45rem;  /* Default width */
-  line-height: 1.5;  /* Line height for readability */
-  padding-top: 1rem;  /* Space above description */
-  font-size: 0.8rem;  /* Default font size */
-  max-width: 380px;  /* Maximum width for description */
-  height: 100px;  /* Fixed height for description */
-}
+      <!-- Popular Anime-->
+      <div class="row">
+          <h2><span class="anime">Anime</span></h2>
+          <div class="row__posters" id="popularAnime">
+              <!-- Movie posters will be populated here -->
+        </div>
+        <div class="arrow-buttons">
+          <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>   
 
-/* Adjustments for mobile devices */
-@media (max-width: 768px) {
-  .banner__title {
-    font-size: 2.5rem;  /* Slightly smaller font size on mobile */
-    padding-bottom: 0.2rem;  /* Keep bottom padding consistent */
-  }
+      <!-- Popular Vivamax -->
+      <div class="row">
+          <h2><span class="vivamax">Vivamax</span></h2>
+          <div class="row__posters" id="popularVivamax">
+              <!-- Movie posters will be populated here -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>      
 
-  .banner__description {
-    width: 90%;  /* Make description width responsive */
-    font-size: 0.8rem;  /* Slightly larger font size for better readability */
-    max-width: none;  /* Allow full width */
-    height: auto;  /* Allow height to adjust to content */
-    padding-top: 1.5rem;  /* Increase padding for better spacing */
-  }
-}
+      <script src="1234/home.js"></script>
 
-/* Further adjustments for very small screens (e.g., phones in portrait mode) */
-@media (max-width: 480px) {
-  .banner__title {
-    font-size: 2rem;  /* Smaller font size on very small screens */
-    padding-bottom: 0.2rem;  /* Keep padding consistent */
-  }
-
-  .banner__description {
-    width: 100%;  /* Full width for description */
-    font-size: 0.8rem;  /* Larger font size for readability */
-    height: auto;  /* Let the height adjust */
-    padding-top: 1.5rem;  /* Keep consistent padding */
-  }
-}
-
-.banner__button {
-  cursor: pointer;
-  color: #fff;
-  outline: none;
-  border: none;
-  font-weight: 700;
-  border-radius: 0.2vw;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: rgba(51, 51, 51, 0.5);
-}
-
-.banner__button:hover {
-  color: #000;
-  background-color: #e6e6e6;
-  transition: all 0.2s;
-}
-
-.banner--fadeBottom {
-  margin-top: 193px;
-  height: 7.4rem;
-  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
-}
-  
-/* Arrow Buttons styling */
-.arrow-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 2rem;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
-  }
-  
-  .arrow-button.prev {
-    left: 10px;
-  }
-  
-  .arrow-button.next {
-    right: 10px;
-  }
-  
-  .row__posters {
-    display: flex;
-    overflow-x: scroll;
-    position: relative;
-    padding: 20px;
-  }
-  
-  /* Hide scrollbar */
-  .row__posters::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Movie posters styling */
-  .row__poster {
-    width: 200px;
-    object-fit: contain;
-    margin-right: 10px;
-    transition: transform 450ms;
-    border-radius: 10px;
-  }
-  
-  .row__poster:hover {
-    transform: scale(1.08);
-  }
-
-  .row {
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .row__posters {
-    display: flex;
-    overflow-x: scroll;
-    padding: 20px 0;
-  }
-  
-  .arrow-buttons {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .arrow-button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 30px;  /* Set the size of the icon */
-  }
-  
-  .arrow-button:hover {
-    background-color: transparent;
-  }
-  
-  .arrow-button i {
-    pointer-events: none; /* Ensures the icon does not interfere with button click */
-  }  
-
-
-
-
-
-
-/* Navigation Bar */
-    nav {
-      width: 100%;
-      background: rgba(0, 0, 0, 0); /* Transparent at the top */
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      padding: 10px 20px;
-      transition: background-color 0.3s;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    /* Sticky Header when Scrolling */
-    .nav-solid {
-      background-color: rgba(0, 0, 0, 1); /* Solid background when scrolled */
-    }
-
-    /* Logo Style */
-    #logo {
-      max-height: 40px;
-      display: inline-block;
-    }
-
-    /* Navigation Menu (Links) */
-    nav ul {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 10px;
-      display: inline-block;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      background-color: #0296cc;
-    }
-
-/* Ensure the movie card container is positioned relative to place the icon */
-.movie-card-container {
-  position: relative;
-  display: inline-block;
-  margin: 10px;
-}
-
-.add-to-list-icon {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-  font-size: 15px;
-  color: white;
-  background-color: rgba(179, 179, 179, 0.411);
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s, filter 0.3s; /* Add filter transition for smooth effect */
-}
-
-.add-to-list-icon:hover {
-  background-color: rgba(87, 84, 84, 0);
-}
-
-.add-to-list-icon i {
-  color: rgb(212, 212, 212); /* Ensures the icon itself is white */
-  filter: none; /* Ensure the icon itself is not blurred */
-}
-
-.container {
-  text-align: center; /* Centers the text horizontally */
-}
-
-h3 {
-  margin: 0;
-  padding: 20px 0;
-}
-
-.list-icon {
-position: absolute;
-top: 15px;
-right: 50px; /* Adjusted for better placement on mobile */
-font-size: 25px;  /* Slightly larger size for better visibility */
-color: white;
-background-color: rgba(92, 90, 90, 0);
-border: none;
-padding: 8px;
-border-radius: 50%;
-cursor: pointer;
-transition: background-color 0.3s, filter 0.3s; /* Smooth transition effects */
-backdrop-filter: blur(10px);
-}
-
-/* Hover effect for the icon */
-.list-icon:hover {
-background-color: rgba(87, 84, 84, 0);
-}
-
-/* Ensure the icon doesn't interfere with layout on small screens */
-@media (max-width: 768px) {
-.list-icon {
-  top: 15px;  /* Make the icon slightly closer to the top for small screens */
-  right: 70px;  /* Ensure it's not too far right */
-  font-size: 18px;  /* Reduce the size a little on smaller screens */
-}
-}
-
-
-#floating-message {
-position: fixed;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
-background-color: #22222242;
-color: white;
-text-align: center;
-padding: 15px;
-font-size: 15px;
-z-index: 1000;
-border-radius: 20px 20px 0 0; /* Rounded top corners */
-width: 80%; /* You can adjust the width as needed */
-backdrop-filter: blur(8px); /* Apply blur effect to the background */
--webkit-backdrop-filter: blur(8px); /* Ensure blur effect works on iOS */
-}
-
-#floating-message button {
-background-color: #111; /* Green background for the "OK" button */
-color: white;
-border: none;
-font-size: 10px;
-padding: 8px 16px;
-cursor: pointer;
-border-radius: 5px; /* Rounded button corners */
-margin-top: 10px; /* Adds space between the message and the button */
-}
-
-#floating-message button:hover {
-background-color: #000000; /* Darker green on hover */
-}
-
-
-.top-ten-label {
-  position: absolute;
-  top: 90px; 
-  left: 30px; 
-  background-color: rgb(228, 47, 47); 
-  color: white; 
-  padding: 10px 20px; 
-  font-size: 24px; 
-  font-weight: bold; 
-  text-transform: uppercase; 
-  border-radius: 5px;
-  z-index: 2; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  height: 60px;
-  width: 60px; 
-  text-align: center; 
-}
-
-
-@media (max-width: 768px) {
-  .top-ten-label {
-    top: 90px; 
-    left: 30px; 
-    font-size: 18px; 
-    height: 50px; 
-    width: 50px; 
-    padding: 8px 15px; 
-  }
-}
-
-.top-ten-label {
-  position: absolute;
-  top: 80px; 
-  left: 30px; 
-  background-color: rgb(228, 47, 47); 
-  color: white; 
-  padding: 10px 20px; 
-  font-size: 24px; 
-  font-weight: bold; 
-  text-transform: uppercase; 
-  border-radius: 5px;
-  z-index: 2; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  height: 60px;
-  width: 60px; 
-  text-align: center; 
-}
-
-
-@media (max-width: 768px) {
-  .top-ten-label {
-    top: 90px; 
-    left: 30px; 
-    font-size: 18px; 
-    height: 50px; 
-    width: 50px; 
-    padding: 15px; 
-  }
-}
-
-/* Styles for the "MOVIES" text */
-.movies {
-  font-family: "Electronica Display Outline";  
-  font-size: 25px;  /* Default font size */
-  color: white;  /* White color for MOVIES */
-  display: inline-block; /* Keep MOVIES in one line */
-  vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "MOVIES" a little down */
-  letter-spacing: -0.5px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "MOVIES" */
-  line-height: 1;  /* Adjust line height for tighter spacing */
-}
-
-/* Styles for the "TV-SERIES" text */
-.tv-series {
-  font-family: "Electronica Display Outline";  
-  font-size: 25px;  /* Default font size */
-  color: white;  /* White color for TV-SERIES */
-  display: inline-block; /* Keep TV-SERIES in one line */
-  vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "TV-SERIES" a little down */
-  letter-spacing: 1px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "TV-SERIES" */
-  line-height: 1;  /* Adjust line height for tighter spacing */
-}
-
-/* Styles for the POPULAR */
-h4 {
-  font-family: "Electronica Display Outline";  
-  font-size: 50px;  /* Larger font for POPULAR */
-  color: transparent;
-  background-image: linear-gradient(180deg, transparent, rgba(228, 47, 47, 0.61), rgb(228, 47, 47));
-  -webkit-background-clip: text;
-  background-clip: text;
-  letter-spacing: 1px;  
-  word-spacing: 1px;  
-  line-height: 1;  
-  text-align: left;  /* Align text to the left */
-  animation: fadeInFromRight 2s ease-out; 
-}
-
-/* Styles for the "K-DRAMA" text */
-.k-drama {
-  font-family: "Electronica Display Outline";  
-  font-size: 25px;  /* Default font size */
-  color: white;  /* White color for K-DRAMA */
-  display: inline-block; /* Keep K-DRAMA in one line */
-  vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "K-DRAMA" a little down */
-  letter-spacing: 0px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "K-DRAMA" */
-  line-height: 1;  /* Adjust line height for tighter spacing */
-}
-
-/* Styles for the "ANIME" text */
-.anime {
-  font-family: "Electronica Display Outline";  
-  font-size: 25px;  /* Default font size */
-  color: white;  /* White color for ANIME */
-  display: inline-block; /* Keep ANIME in one line */
-  vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "ANIME" a little down */
-  letter-spacing: 0px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "ANIME" */
-  line-height: 1;  /* Adjust line height for tighter spacing */
-}
-
-/* Styles for the "VIVAMAX" text */
-.vivamax {
-  font-family: "Electronica Display Outline";  
-  font-size: 25px;  /* Default font size */
-  color: white;  /* White color for VIVAMAX */
-  display: inline-block; /* Keep VIVAMAX in one line */
-  vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "VIVAMAX" a little down */
-  letter-spacing: 0px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "VIVAMAX" */
-  line-height: 1;  /* Adjust line height for tighter spacing */
-}
-
-/* Keyframe animation */
-@keyframes fadeInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px); 
-    background-image: linear-gradient(180deg, transparent, rgba(228, 47, 47, 0.61), rgb(228, 47, 47));
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-    background-image: linear-gradient(180deg, transparent, rgba(228, 47, 47, 0.61), rgb(228, 47, 47));
-  }
-}
-
-/* Adjust styles for mobile devices */
-@media (max-width: 768px) {
-  
-  .movies {
-    font-size: 16px;  /* Slightly smaller font for mobile */
-    margin-top: 10px;  /* Adjust margin for better spacing */
-  }
-
- .tv-series {
-    font-size: 16px;  /* Slightly smaller font for mobile */
-    margin-top: 10px;  /* Adjust margin for better spacing */
-  }
-  
-  h4 {
-    font-size: 35px;  /* Smaller font size for h4 on mobile */
-    letter-spacing: 0.5px;  /* Adjust letter spacing */
-    word-spacing: 0.5px;  /* Adjust word spacing */
-  }
-  
-  .k-drama {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-  
-  .anime {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-  
-  .vivamax {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }  
-  
-}
-
-/* Further adjustments for very small screens (e.g., phones in portrait mode) */
-@media (max-width: 480px) {
-  nav ul li a {
-    font-size: 15px;
-    padding: 5;
-  }
-  
-  .movies {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-
-  .tv-series {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-  
-  h4 {
-    font-size: 35px;  /* Even smaller font for POPULAR */
-    letter-spacing: 0.3px;  /* Tighter letter-spacing */
-    word-spacing: 0.3px;  /* Tighter word-spacing */
-  }
-  
-  .k-drama {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-  
-    .anime {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }
-  
-    .vivamax {
-    font-size: 16px;  /* Even smaller font for very small screens */
-    margin-top: 10px;  /* Further reduce margin */
-  }   
-}
-
-/*DINAGDAG*/
-/* Mobile Styles (Screen width below 768px) */
-    @media (max-width: 768px) {
-      /* Navigation links initially hidden on mobile */
-      nav ul {
-        display: none;  /* Hidden by default */
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 50px; /* To place the menu below the nav bar */
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 10px 0;
-      }
-      /* Active state of the menu */
-      nav.active ul {
-        display: flex; /* Show the menu when active */
-      }
-      nav ul li {
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
+      <script>
+      // Function to close the message and save the state to localStorage
+      function closeMessage() {
+          document.getElementById("floating-message").style.display = "none"; // Hide the message
+          const currentTime = new Date().getTime(); // Get the current timestamp in milliseconds
+          localStorage.setItem("messageClosed", "true"); // Save "true" to localStorage
+          localStorage.setItem("messageClosedTime", currentTime); // Save the timestamp of when the message was closed
       }
 
-      nav ul li a {
-        padding: 15px;
-        width: 100%;
-        text-align: center;
-      }
+      // Check if the message has already been closed and if 30 minutes have passed
+      window.onload = function() {
+          const messageClosed = localStorage.getItem("messageClosed");
+          const closedTime = localStorage.getItem("messageClosedTime");
 
-      /* Logo will adjust for smaller screens */
-      #logo {
-        max-height: 30px;
-      }
+          if (messageClosed === "true") {
+              const currentTime = new Date().getTime();
+              const timeDifference = currentTime - closedTime; // Get the difference in milliseconds
 
-      /* Menu Button visible on mobile */
-      .menu-btn {
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        cursor: pointer;
-        background-color: #333;
-        padding: 10px 20px;
-        border-radius: 5px;
-        display: block;  /* Visible on mobile */
+              // If more than 30 minutes (1800000 ms) have passed, show the message again
+              if (timeDifference >= 1800000) {
+                  document.getElementById("floating-message").style.display = "block";
+                  localStorage.removeItem("messageClosed"); // Reset the messageClosed flag
+                  localStorage.removeItem("messageClosedTime"); // Reset the timestamp
+              } else {
+                  document.getElementById("floating-message").style.display = "none"; // Hide the message if less than 30 minutes have passed
+              }
+          }
       }
+  </script>
 
-      /* Show menu when active */
-#menu.active {
-    display: flex;
-}
-    }
-/*
-    /* Hide the menu button on desktop */
-    @media (min-width: 769px) {
-      .menu-btn {
-        display: none;  /* Hide the menu button on desktop */
-      }
-    }
 
+  </body>
+
+  </html>
