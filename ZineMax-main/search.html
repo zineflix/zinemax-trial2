@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Movies &amp; TV Shows</title>
+  <link rel="stylesheet" href="css/1234-swiper.css"> <!-- Link to the external CSS -->
+  <link href="https://db.onlinewebfonts.com/c/25ee966fb81cd61ffdfb393e81c7bf4b?family=Electronica+Display+Outline" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ8V3HXD2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZ8V3HXD2E');
+</script>
+
+  <div class="container">
+    <header>
+      <!-- Go Back button -->
+      <button class="go-back-btn" onclick="window.history.back()">Go Back</button>
+
+      <h1>Search Movies &amp; TV Shows</h1>
+      <input type="text" id="search" placeholder="Search for movies or TV shows...">
+    </header>
+
+    <!-- Recommendation text -->
+    <div id="recommendation-text">
+      <p>Recommend Movies and TV Shows</p>
+    </div>
+
+    <!-- Movie grid -->
+    <div id="movie-grid" class="movie-grid">
+      <!-- Movies/TV shows will be displayed here -->
+    </div>
+  </div>
+
+  <script src="1234/search.js"></script> <!-- Link to the external JS -->
+
+  <!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
+<script>  
+// Disable Right-Click
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+// Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+document.addEventListener('keydown', function (event) {
+    if (event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && event.key === "I") || 
+        (event.ctrlKey && event.shiftKey && event.key === "J") || 
+        (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+    }
+});
+
+// Redirect to Google if DevTools is Opened
+setInterval(function(){
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200){
+        window.location.href = "https://www.effectiveratecpm.com/w6gnwauzb?key=4d8f595f0136eea4d9e6431d88f478b5"; // Redirect to Adsterra Ads
+    }
+}, 1000);
+
+// Prevent iFrame Embedding (Clickjacking Protection)
+if (window !== window.top) {
+    window.top.location = window.location;
+}
+
+// Prevent Viewing Page Source
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) { return false; } // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+}; 
+</script>  
+
+ <!--Additional Script--> 
+    <script disable-copy="true" disable-cut="true" disable-paste="true" clear-log="true" disable-devtool-auto disable-menu="false" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+</body>
+</html>

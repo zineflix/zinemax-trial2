@@ -1,0 +1,231 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    overflow: auto; /* Enable scrolling on the body */
+}
+
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+    width: 0px; /* Removes the scrollbar */
+    height: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hides the thumb (the draggable part) */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent; /* Makes the track (the part the thumb slides on) invisible */
+}
+
+/* Other styles remain the same */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: auto; /* Allow scrolling within the container */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Allow grid to scroll but hide the scrollbar */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Default for small screens */
+    gap: 10px; /* Reduced gap between items */
+    justify-items: center;
+    overflow: auto; /* Enable scrolling */
+    max-height: 100vh; /* Adjust height to allow scrolling */
+    padding-right: 15px; /* Prevent horizontal scroll */
+}
+
+/* Hide the scrollbar but still allow scrolling */
+.grid::-webkit-scrollbar {
+    width: 0px;  /* Hide vertical scrollbar */
+    height: 0px; /* Hide horizontal scrollbar */
+}
+
+.grid::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide the thumb (the draggable part) */
+}
+
+.grid::-webkit-scrollbar-track {
+    background: transparent; /* Make the track (the part the thumb slides on) invisible */
+}
+
+.card {
+    background-color: transparent; /* Make the background transparent */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* Default image height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    border-bottom: none; /* Removed the bottom border */
+}
+
+.card .info {
+    padding: 8px;
+    background-color: transparent; /* Make the info section background transparent */
+}
+
+.card .info h3 {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.card .info p {
+    font-size: 10px;
+    color: #555;
+}
+
+/* Style for the dropdowns */
+.dropdown-container {
+    display: flex;
+    justify-content: center; /* Center the dropdowns horizontally on desktop */
+    gap: 20px; /* Adds spacing between the dropdowns */
+    margin-top: 20px; /* Add space from the top */
+}
+
+/* When on desktop, dropdowns are aligned horizontally */
+@media (min-width: 768px) {
+    .dropdown-container {
+        flex-direction: row; /* Horizontal layout for desktop */
+        align-items: center;
+    }
+
+    .dropdown {
+        text-align: center;
+        position: relative;
+        max-width: 250px; /* Increase max-width for better spacing */
+        flex-grow: 1; /* Ensure dropdowns grow evenly */
+        min-width: 180px; /* Minimum width for better readability */
+        margin: 10px 0; /* Add vertical margin between the dropdowns */
+    }
+}
+
+/* When on mobile, dropdowns are aligned vertically */
+@media (max-width: 768px) {
+    .dropdown-container {
+        flex-direction: column; /* Vertical layout for mobile */
+        align-items: center; /* Center dropdowns horizontally */
+        gap: 15px; /* Add space between dropdowns */
+        margin-top: 20px; /* Add space from top */
+    }
+
+    .dropdown {
+        width: 100%; /* Make each dropdown take full width */
+        min-width: 150px; /* Optional: minimum width for dropdowns */
+    }
+
+    select {
+        width: 100%; /* Ensure dropdown takes full width on mobile */
+    }
+
+    /* Add space between the grid and the dropdown container on mobile */
+    .grid {
+        margin-top: 30px; /* Add margin to the top of the grid to create space */
+    }
+
+    /* Ensure 3 posters are displayed per row on mobile */
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    }
+
+    .card img {
+        height: 180px; /* Adjust image height for mobile */
+    }
+}
+
+select {
+    padding: 8px;
+    font-size: 14px;
+    background-color: #333;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    text-overflow: ellipsis; /* Ensure long text does not overflow */
+}
+
+.select-container {
+    position: relative;
+    overflow: hidden; /* Hide scrollbars */
+    display: inline-block;
+    max-width: 100px; /* Optional: Adjust as needed */
+}
+
+select:focus {  
+    border-color: #ff9800; /* Highlight border on focus */
+    outline: none;
+}
+
+select:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+}
+
+/* Dropdown options - scrollable */
+select option {
+    background-color: #333;
+    max-height: 300px; /* Optional: control dropdown height */
+    overflow-y: scroll; /* Make options scrollable */
+}
+
+.go-back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.go-back-btn:hover {
+    background-color: #555;
+}
+
+.container {
+    text-align: center;
+}
+
+.get-random-btn {
+    padding: 15px 20px;
+    font-size: 15px;
+    border: 3px solid #ddd;
+    background-color: #111;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-random-btn:hover {
+    background-color: #666;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: "Electronica Display Outline";  
+}

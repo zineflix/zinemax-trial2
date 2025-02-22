@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <link rel="apple-touch-icon" href="img/ZineMax_1.png">
+      <title>ZINEMAX</title>
+      <link rel="stylesheet" href="1234/home.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="manifest" href="manifest.json">
+      <link rel="preload" href="1234/home.css" as="style">
+      <link rel="preload" href="1234/home.js" as="home">
+      <link href="https://db.onlinewebfonts.com/c/25ee966fb81cd61ffdfb393e81c7bf4b?family=Electronica+Display+Outline" rel="stylesheet">
+      <link href="https://db.onlinewebfonts.com/c/6aa9c3aef30b81ee339ac2df6fee25f5?family=Electronica+Display+Solid" rel="stylesheet">
+  </head> 
+    
+  <body>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ8V3HXD2E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YZ8V3HXD2E');
+  </script>
+
+    <!-- For Header -->  
+<nav>
+    <!-- Logo -->
+    <img id="logo" src="https://zinemax.netlify.app/img/ZineMax.png" alt="Logo">
+
+    <!-- Menu Button (visible only on mobile) -->
+    <span class="menu-btn" id="menu-btn">Menu</span>
+
+    <!-- Navigation Menu -->
+    <ul id="menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="movies.html">MOVIES</a></li>
+      <li><a href="tvshows_page.html">TV-SHOWS</a></li>
+      <li><a href="sorting.html">SORT BY</a></li>
+      <li><a href="search.html">SEARCH</a></li>
+    </ul>
+  </nav> 
+    
+  <header class="banner">
+
+        <div class="banner__contents">
+            <h1 class="banner__title">Loading...</h1> <!-- This will be replaced dynamically -->
+            <div class="banner__buttons">
+                <!-- Play Button -->
+                <button class="banner__button" id="play-button">PLAY</button>
+            </div>
+            <h1 class="banner__description">
+                Loading description...
+            </h1> <!-- This will be replaced dynamically -->
+        </div>   
+
+        <!-- Floating Message -->
+  <div id="floating-message">
+    <i class="fa-solid fa-triangle-exclamation"></i><h2>Disclaimer!</h2><br>
+      This site does not host any files on its server. All content displayed on this site is provided by third-party sites and services. We don't have control on any content, or services provided by their sites. If you have any questions or concerns about the content hosted by third-party sites, please contact the site owner or administrator directly!
+      <button onclick="closeMessage()">OK</button>
+  </div>      
+        
+        <div class="banner--fadeBottom"></div>
+      </header> 
+
+      <!-- Popular Movies Section -->
+      <div class="row">
+        <h4>POPULAR<span class="movies">M O V I E S</span></h4> 
+            <div class="row__posters" id="popularMovies">
+            <!-- Movie posters will be added here dynamically -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>       
+
+      <!-- Popular TV Series Section -->
+      <div class="row">
+        <h4>POPULAR<span class="tv-series">T V  S E R I E S</span></h4> 
+            <div class="row__posters" id="popularTvSeries">
+            <!-- Popular TV show posters will be added dynamically -->
+        </div>
+        <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>    
+ 
+      <!-- Popular K-Drama -->
+      <div class="row">
+          <h2><span class="k-drama">K-Drama</span></h2>
+          <div class="row__posters" id="popularKdrama">
+              <!-- Movie posters will be populated here -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>    
+
+      <!-- Popular Anime-->
+      <div class="row">
+          <h2><span class="anime">Anime</span></h2>
+          <div class="row__posters" id="popularAnime">
+              <!-- Movie posters will be populated here -->
+        </div>
+        <div class="arrow-buttons">
+          <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>   
+
+      <!-- Popular Vivamax -->
+      <div class="row">
+          <h2><span class="vivamax">Vivamax</span></h2>
+          <div class="row__posters" id="popularVivamax">
+              <!-- Movie posters will be populated here -->
+          </div>
+          <div class="arrow-buttons">
+            <button class="arrow-button prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-button next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>      
+
+      <script src="1234/home.js"></script>
+
+      <script>
+      // Function to close the message and save the state to localStorage
+      function closeMessage() {
+          document.getElementById("floating-message").style.display = "none"; // Hide the message
+          const currentTime = new Date().getTime(); // Get the current timestamp in milliseconds
+          localStorage.setItem("messageClosed", "true"); // Save "true" to localStorage
+          localStorage.setItem("messageClosedTime", currentTime); // Save the timestamp of when the message was closed
+      }
+
+      // Check if the message has already been closed and if 30 minutes have passed
+      window.onload = function() {
+          const messageClosed = localStorage.getItem("messageClosed");
+          const closedTime = localStorage.getItem("messageClosedTime");
+
+          if (messageClosed === "true") {
+              const currentTime = new Date().getTime();
+              const timeDifference = currentTime - closedTime; // Get the difference in milliseconds
+
+              // If more than 30 minutes (1800000 ms) have passed, show the message again
+              if (timeDifference >= 1800000) {
+                  document.getElementById("floating-message").style.display = "block";
+                  localStorage.removeItem("messageClosed"); // Reset the messageClosed flag
+                  localStorage.removeItem("messageClosedTime"); // Reset the timestamp
+              } else {
+                  document.getElementById("floating-message").style.display = "none"; // Hide the message if less than 30 minutes have passed
+              }
+          }
+      }
+  </script>
+
+
+  </body>
+
+  </html>

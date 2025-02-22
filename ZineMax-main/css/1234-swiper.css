@@ -1,0 +1,138 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;  /* Set default text color to white */
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-family: "Electronica Display Outline"; 
+  }
+  
+  #search {
+    padding: 10px;
+    width: 50%;
+    font-size: 16px;
+    margin-top: 10px;
+    color: red;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 10px;
+  }
+  
+  #search::placeholder {
+    color: #bbb;
+  }
+  
+  #recommendation-text p {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .movie-item {
+    position: relative;
+  }
+  
+  .movie-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Container for the star and rating */
+  .rating-container {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 2;
+  }
+  
+  /* Rating styles */
+  .rating {
+    background-color: rgba(238, 238, 238, 0.123); /* Dark background */
+    color: white; /* Default color for text (rating number) */
+    font-size: 13px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+  }
+  
+  /* Star icon styling */
+  .star {
+    color: yellow; /* Make the star yellow */
+    margin-right: 1px; /* Space between the star and rating number */
+    font-size: 18px; /* Size of the star */
+    position: relative;
+    top: -3px; /* Move the star a bit higher */
+  }
+  
+  .rating-number {
+    color: white; /* Make the number white */
+  }
+  
+  .go-back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .go-back-btn:hover {
+    background-color: #555;
+  }
+
+  /* Movie item styling */
+.movie-item {
+    position: relative;
+    overflow: hidden; /* Ensures that the poster stays within the bounds of the container */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for movie item */
+  .movie-item:hover {
+    transform: scale(1.05); /* Slightly scale the movie item */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+  }
+  
+  /* Movie poster styling */
+  .movie-item img {
+    width: 100%;
+    height: auto; /* Make sure the aspect ratio of the image stays the same */
+    border-radius: 8px;
+    transition: opacity 0.3s ease; /* Transition for opacity change */
+  }
+  
+  /* Optional: add a fade effect when hovering over the poster */
+  .movie-item:hover img {
+    opacity: 0.9; /* Make the image slightly transparent when hovered */
+  }
+  
