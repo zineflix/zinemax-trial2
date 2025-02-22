@@ -681,7 +681,7 @@ h4 {
     display: flex;
 }
     }
-
+/*
     /* Hide the menu button on desktop */
     @media (min-width: 769px) {
       .menu-btn {
