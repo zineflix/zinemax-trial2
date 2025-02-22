@@ -238,7 +238,7 @@ html {
 /* Navigation Bar */
     nav {
       width: 100%;
-      background: rgba(0, 0, 0, .8); /* Transparent at the top */
+      background: rgba(0, 0, 0, 0); /* Transparent at the top */
       position: fixed;
       top: 0;
       left: 0;
@@ -252,7 +252,7 @@ html {
 
     /* Sticky Header when Scrolling */
     .nav-solid {
-      background-color: rgba(0, 0, 0, 0.8); /* Solid background when scrolled */
+      background-color: rgba(0, 0, 0, 1); /* Solid background when scrolled */
     }
 
     /* Logo Style */
@@ -289,11 +289,6 @@ html {
     nav ul li a.active {
       background-color: #0296cc;
     }
-
-
-
-
-
 
 /* Ensure the movie card container is positioned relative to place the icon */
 .movie-card-container {
@@ -596,7 +591,7 @@ h4 {
 /* Further adjustments for very small screens (e.g., phones in portrait mode) */
 @media (max-width: 480px) {
   nav ul li a {
-    font-size: 9px;
+    font-size: 15px;
     padding: 5;
   }
   
