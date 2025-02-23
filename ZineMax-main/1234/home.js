@@ -7,21 +7,6 @@ window.addEventListener("scroll", function () {
         nav.classList.remove("nav-solid"); // Transparent at the top
     }
 });
-// For sticky header when scrolling
-    window.addEventListener("scroll", function () {
-      let nav = document.querySelector("nav");
-      if (window.scrollY > 50) {
-        nav.classList.add("nav-solid"); // Add solid background when scrolled
-      } else {
-        nav.classList.remove("nav-solid"); // Remove solid background at top
-      }
-    });
-
-    // Toggle menu visibility when menu button is clicked
-document.getElementById("menu-btn").addEventListener("click", function() {
-    document.getElementById("menu").classList.toggle("active");
-});
-
 
 const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your TMDB API Key
 const baseUrl = 'https://api.themoviedb.org/3';
@@ -123,75 +108,7 @@ const fetchMovies = async (category, rowId) => {
     } catch (error) {
         console.error('Error fetching movies:', error);
     }
-                const tvShowCards = document.getElementById(rowId);
-        tvShowCards.innerHTML = ''; // Clear existing posters
-
-        if (data.results && data.results.length > 0) {
-            data.results.forEach(tvShow => {
-                const tvShowCard = document.createElement('div');
-                tvShowCard.classList.add('tv-show-card');
-                tvShowCard.style.position = 'relative'; // Ensure the card has a position context for the icon
-
-                // TV Show poster
-                const tvShowPoster = document.createElement('img');
-                tvShowPoster.classList.add('row__poster');
-                tvShowPoster.src = `https://image.tmdb.org/t/p/w500${tvShow.poster_path}`;
-                tvShowPoster.alt = tvShow.name;
-
-                // Add "Add to List" icon (Font Awesome plus icon)
-                const addToListIcon = document.createElement('button');
-                addToListIcon.classList.add('add-to-list-icon');
-                addToListIcon.innerHTML = '<i class="fas fa-plus"></i>'; // Default plus icon
-
-                // Check if the TV show is in the local storage list
-                let tvShowList = JSON.parse(localStorage.getItem('tvShowList')) || [];
-                if (tvShowList.find(show => show.id === tvShow.id)) {
-                    addToListIcon.querySelector('i').classList.remove('fa-plus');
-                    addToListIcon.querySelector('i').classList.add('fa-minus'); // Set to minus if already in list
-                }
-
-                // Event listener for "Add to List" icon
-                addToListIcon.addEventListener('click', (event) => {
-                    event.stopPropagation();  // Prevent TV show click event
-
-                    // Toggle between plus and minus icons
-                    const icon = addToListIcon.querySelector('i');
-                    if (icon.classList.contains('fa-plus')) {
-                        icon.classList.remove('fa-plus');
-                        icon.classList.add('fa-minus');
-                        
-                        // Add the TV show to localStorage
-                        tvShowList.push(tvShow);  // Add the TV show to the list
-                        localStorage.setItem('tvShowList', JSON.stringify(tvShowList)); // Save back to localStorage
-                    } else {
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                
-                        // Remove TV show from localStorage
-                        tvShowList = tvShowList.filter(show => show.id !== tvShow.id);  // Remove TV show by ID
-                        localStorage.setItem('tvShowList', JSON.stringify(tvShowList)); // Save back to localStorage
-                    }
-                });
-
-                // Append the poster and icon to the TV show card
-                tvShowCard.appendChild(tvShowPoster);
-                tvShowCard.appendChild(addToListIcon);
-
-                // Add click event to each TV show poster to redirect to the details page
-                tvShowCard.addEventListener('click', () => {
-                    window.location.href = `tvshows-details.html?id=${tvShow.id}`;
-                });
-
-                tvShowCards.appendChild(tvShowCard);
-            });
-        } else {
-            console.log(`No results for category: ${category}`);
-        }
-    } catch (error) {
-        console.error('Error fetching TV shows:', error);
-    }
 };
-                
 
 document.addEventListener('DOMContentLoaded', () => {
     // Retrieve the movie list from localStorage
@@ -497,21 +414,19 @@ fetchBanner();
 // Initialize arrow buttons functionality after fetching the movie data
 document.addEventListener('DOMContentLoaded', initArrowNavigation);
 
-// JavaScript for the Close Button
-document.getElementById('close-button').addEventListener('click', () => {
-    window.location.href = 'movies.html';  // Redirects to the main page (index.html)
-});
-
-window.addEventListener("load", function() {
-    setTimeout(function() {
-        document.getElementById("loading-screen").style.display = "none";
-    }, 1000); // 3000ms = 3 seconds
-});
 
 //DINAGDAG//
+// For sticky header when scrolling
+    window.addEventListener("scroll", function () {
+      let nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("nav-solid"); // Add solid background when scrolled
+      } else {
+        nav.classList.remove("nav-solid"); // Remove solid background at top
+      }
+    });
 
-        }
-
-
-
-
+    // Toggle menu visibility when menu button is clicked
+document.getElementById("menu-btn").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
+});
