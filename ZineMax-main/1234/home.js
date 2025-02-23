@@ -1,6 +1,3 @@
-BACK UP NETPLEX HOME.JS
-
-
 // For Responsive Header
 window.addEventListener("scroll", function () {
     let nav = document.querySelector("nav");
