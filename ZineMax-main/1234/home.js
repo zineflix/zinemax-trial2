@@ -123,6 +123,56 @@ const fetchMovies = async (category, rowId) => {
     } catch (error) {
         console.error('Error fetching movies:', error);
     }
+                const tvShowCards = document.getElementById(rowId);
+        tvShowCards.innerHTML = ''; // Clear existing posters
+
+        if (data.results && data.results.length > 0) {
+            data.results.forEach(tvShow => {
+                const tvShowCard = document.createElement('div');
+                tvShowCard.classList.add('tv-show-card');
+                tvShowCard.style.position = 'relative'; // Ensure the card has a position context for the icon
+
+                // TV Show poster
+                const tvShowPoster = document.createElement('img');
+                tvShowPoster.classList.add('row__poster');
+                tvShowPoster.src = `https://image.tmdb.org/t/p/w500${tvShow.poster_path}`;
+                tvShowPoster.alt = tvShow.name;
+
+                // Add "Add to List" icon (Font Awesome plus icon)
+                const addToListIcon = document.createElement('button');
+                addToListIcon.classList.add('add-to-list-icon');
+                addToListIcon.innerHTML = '<i class="fas fa-plus"></i>'; // Default plus icon
+
+                // Check if the TV show is in the local storage list
+                let tvShowList = JSON.parse(localStorage.getItem('tvShowList')) || [];
+                if (tvShowList.find(show => show.id === tvShow.id)) {
+                    addToListIcon.querySelector('i').classList.remove('fa-plus');
+                    addToListIcon.querySelector('i').classList.add('fa-minus'); // Set to minus if already in list
+                }
+
+                // Event listener for "Add to List" icon
+                addToListIcon.addEventListener('click', (event) => {
+                    event.stopPropagation();  // Prevent TV show click event
+
+                    // Toggle between plus and minus icons
+                    const icon = addToListIcon.querySelector('i');
+                    if (icon.classList.contains('fa-plus')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                        
+                        // Add the TV show to localStorage
+                        tvShowList.push(tvShow);  // Add the TV show to the list
+                        localStorage.setItem('tvShowList', JSON.stringify(tvShowList)); // Save back to localStorage
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                
+                        // Remove TV show from localStorage
+                        tvShowList = tvShowList.filter(show => show.id !== tvShow.id);  // Remove TV show by ID
+                        localStorage.setItem('tvShowList', JSON.stringify(tvShowList)); // Save back to localStorage
+                    }
+                });
+
                 // Append the poster and icon to the TV show card
                 tvShowCard.appendChild(tvShowPoster);
                 tvShowCard.appendChild(addToListIcon);
