@@ -510,6 +510,10 @@ fetchTVShows('drama', 'dramaTVShows');
 fetchTVShows('comedy', 'comedyTVShows');
 fetchTVShows('romance', 'romanceTVShows');
 fetchTVShows('documentary', 'documentaryTVShows');
+fetchMovies('tvseries', 'popularTvSeries');
+fetchMovies('kdrama', 'popularKdrama');
+fetchMovies('anime', 'popularAnime');
+fetchMovies('vivamax', 'popularVivamax');
 
 // Fetch banner details for TV Shows
 fetchBanner();
