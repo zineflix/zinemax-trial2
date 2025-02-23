@@ -441,6 +441,41 @@ window.addEventListener("load", function() {
 });
 
 //DINAGDAG//
+const fetchTVShowDetails = async () => {
+    try {
+        const url = `${baseUrl}/tv/${tvShowId}?api_key=${apiKey}&language=en-US`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const tvShow = await response.json();
+
+        // Populate poster and details
+        const posterUrl = `https://image.tmdb.org/t/p/w500${tvShow.poster_path}`;
+        document.getElementById('tv-show-poster').src = posterUrl;
+
+        const backdropUrl = tvShow.backdrop_path ? `https://image.tmdb.org/t/p/original${tvShow.backdrop_path}` : 'https://via.placeholder.com/1500x800?text=No+Backdrop+Available';
+        document.querySelector('.blurred-background').style.backgroundImage = `url(${backdropUrl})`;
+
+        document.getElementById('tv-show-description').textContent = tvShow.overview;
+
+        const tvShowRating = tvShow.vote_average;
+        const starContainer = document.getElementById('tv-show-rating');
+        starContainer.innerHTML = '';
+        const filledStars = Math.round(tvShowRating / 2);
+        const emptyStars = 5 - filledStars;
+
+        for (let i = 0; i < filledStars; i++) {
+            const star = document.createElement('span');
+            star.classList.add('star', 'filled');
+            starContainer.appendChild(star);
+        }
+
+        for (let i = 0; i < emptyStars; i++) {
+            const star = document.createElement('span');
+            star.classList.add('star', 'empty');
+            starContainer.appendChild(star);
+        }
 
 
 
