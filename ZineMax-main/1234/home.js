@@ -1,6 +1,4 @@
-//----------------------------------
-// FOR RESPONSIVE NAVIGATION HEADER
-//----------------------------------
+// FOR RESPONSIVE HEADER
 window.addEventListener("scroll", function () {
     let nav = document.querySelector("nav");
     if (window.scrollY > 50) {
