@@ -9,9 +9,6 @@ const fetchTVShows = async (category, rowId) => {
             case 'popular':
                 url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=10000&vote_average=10&page=1`;
                 break;
-            case 'tvseries':
-                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=5000&vote_average=10&page=1`;
-                break; // for Index POPULAR TV SHOWS
             case 'trending':
                 url = `${baseUrl}/trending/tv/week?api_key=${apiKey}`;
                 break;
@@ -29,6 +26,15 @@ const fetchTVShows = async (category, rowId) => {
                 break;
             case 'documentary':
                 url = `${baseUrl}/discover/tv?api_key=${apiKey}&with_genres=99&page=1`; // Genre ID 99 is Documentary
+                break;
+                case 'tvseries':
+                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=10000&vote_average=10&page=1`;
+                break; // for TV-Series
+            case 'kdrama':
+                url = `${baseUrl}/discover/tv?api_key=${apiKey}&include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&vote_count.gte=500&with_origin_country=KR`; // for K-Drama
+                break;
+            case 'anime':
+                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=700&with_genres=16&with_origin_country=JP`; // for Anime
                 break;
             default:
                 console.log('Unknown category');
