@@ -441,9 +441,9 @@ document.getElementById("menu-btn").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
 });
 
-//----------------------------
+
 // FOR TV SHOWS FUNCTIONALITY 
-//----------------------------
+
 const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your TMDB API Key
 const baseUrl = 'https://api.themoviedb.org/3';
 
