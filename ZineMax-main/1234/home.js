@@ -26,7 +26,7 @@ const fetchMovies = async (category, rowId) => {
                 url = `${baseUrl}/discover/tv?api_key=${apiKey}&include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&vote_count.gte=500&with_origin_country=KR`; // for K-Drama
                 break;
             case 'anime':
-                url = `${baseUrl}/discover/tv?api_key=${apiKey}sort_by=popularity.desc&vote_count.gte=700&with_genres=16&with_origin_country=JP`; // for Anime
+                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=700&with_genres=16&with_origin_country=JP`; // for Anime
                 break;
             case 'vivamax':
                 url = `${baseUrl}/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&vote_average.gte=5&vote_average.lte=10&with_companies=149142`; // for Vivamax
