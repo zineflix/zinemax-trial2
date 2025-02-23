@@ -1,13 +1,3 @@
-// For Responsive Header
-window.addEventListener("scroll", function () {
-    let nav = document.querySelector("nav");
-    if (window.scrollY > 50) {
-        nav.classList.add("nav-solid"); // Solid color after scrolling down
-    } else {
-        nav.classList.remove("nav-solid"); // Transparent at the top
-    }
-});
-
 const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your TMDB API Key
 const baseUrl = 'https://api.themoviedb.org/3';
 
@@ -42,9 +32,6 @@ const fetchMovies = async (category, rowId) => {
                 break;
             case 'animation':
                 url = `${baseUrl}/discover/movie?api_key=${apiKey}&with_genres=16&page=1`;
-                break;
-                case 'vivamax':
-                url = `${baseUrl}/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&vote_average.gte=5&vote_average.lte=10&with_companies=149142`; // for Vivamax
                 break;
             default:
                 console.log('Unknown category');
@@ -480,7 +467,6 @@ fetchMovies('comedy', 'comedyMovies');
 fetchMovies('horror', 'horrorMovies');
 fetchMovies('romance', 'romanceMovies');
 fetchMovies('animation', 'animation');
-fetchMovies('vivamax', 'popularVivamax');
 
 // Fetch banner details
 fetchBanner();
