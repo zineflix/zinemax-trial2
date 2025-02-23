@@ -123,24 +123,23 @@ const fetchMovies = async (category, rowId) => {
     } catch (error) {
         console.error('Error fetching movies:', error);
     }
-                // Append the poster and icon to the movie card
-                movieCard.appendChild(moviePoster);
-                movieCard.appendChild(addToListIcon);
+                // Append the poster and icon to the TV show card
+                tvShowCard.appendChild(tvShowPoster);
+                tvShowCard.appendChild(addToListIcon);
 
-                // Add click event to each movie poster to redirect to the movie details page
-                movieCard.addEventListener('click', () => {
-                    window.location.href = `movie-details.html?movie_id=${movie.id}`;
+                // Add click event to each TV show poster to redirect to the details page
+                tvShowCard.addEventListener('click', () => {
+                    window.location.href = `tvshows-details.html?id=${tvShow.id}`;
                 });
 
-                movieCards.appendChild(movieCard);
+                tvShowCards.appendChild(tvShowCard);
             });
         } else {
             console.log(`No results for category: ${category}`);
         }
     } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.error('Error fetching TV shows:', error);
     }
-
 };
                 
 
