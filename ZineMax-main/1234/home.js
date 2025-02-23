@@ -34,10 +34,6 @@ document.getElementById("menu-btn").addEventListener("click", function() {
 const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your TMDB API Key
 const baseUrl = 'https://api.themoviedb.org/3';
 
-
-//-------------------------
-// FOR MOVIE FUNCTIONALITY 
-//-------------------------
 // Helper function to fetch Movies, Tv-Series, K-Drama, Anime, Vivamax and populate the row
 const fetchMovies = async (category, rowId) => {
     try {
@@ -281,10 +277,6 @@ const initArrowNavigation = () => {
 };
 
 
-
-//---------------------------
-// FOR TV SHOWS FUNCTIONALITY 
-//---------------------------
 
 // Function to fetch TV shows based on category
 const fetchTVShows = async (category, rowId) => {
