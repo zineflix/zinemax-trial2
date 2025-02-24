@@ -26,16 +26,7 @@ const fetchTVShows = async (category, rowId) => {
                 break;
             case 'documentary':
                 url = `${baseUrl}/discover/tv?api_key=${apiKey}&with_genres=99&page=1`; // Genre ID 99 is Documentary
-                break;
-                case 'tvseries':
-                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=10000&vote_average=10&page=1`;
-                break; // for TV-Series
-            case 'kdrama':
-                url = `${baseUrl}/discover/tv?api_key=${apiKey}&include_adult=true&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&vote_count.gte=500&with_origin_country=KR`; // for K-Drama
-                break;
-            case 'anime':
-                url = `${baseUrl}/discover/tv?api_key=${apiKey}&sort_by=popularity.desc&vote_count.gte=700&with_genres=16&with_origin_country=JP`; // for Anime
-                break;
+                break;     
             default:
                 console.log('Unknown category');
                 return;
@@ -509,10 +500,6 @@ fetchTVShows('drama', 'dramaTVShows');
 fetchTVShows('comedy', 'comedyTVShows');
 fetchTVShows('romance', 'romanceTVShows');
 fetchTVShows('documentary', 'documentaryTVShows');
-fetchMovies('tvseries', 'popularTvSeries');
-fetchMovies('kdrama', 'popularKdrama');
-fetchMovies('anime', 'popularAnime');
-fetchMovies('vivamax', 'popularVivamax');
 
 // Fetch banner details for TV Shows
 fetchBanner();
@@ -532,6 +519,8 @@ window.addEventListener("load", function() {
         document.getElementById("loading-screen").style.display = "none";
     }, 1000); // 3000ms = 3 seconds
 });
+
+
 
 // FOR RESPONSIVE NAVIGATION HEADER
 window.addEventListener("scroll", function () {
