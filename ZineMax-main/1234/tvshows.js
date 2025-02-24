@@ -502,6 +502,7 @@ const fetchMoreLikeThis = async (tvShowId) => {
 fetchTVShowDetails();
 
 // Fetch data for different TV show categories
+fetchTVShows('popular', 'popularTVShows');
 fetchTVShows('trending', 'trendingTVShows');
 fetchTVShows('top_rated', 'topRatedTVShows');
 fetchTVShows('drama', 'dramaTVShows');
