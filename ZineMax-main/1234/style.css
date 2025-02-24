@@ -1747,8 +1747,8 @@ h4 {
 @media (max-width: 768px) {
   
   nav ul li a {
-    font-size: 10px;
-    padding: 1;
+    font-size: 15px;
+    padding: 5;
   }
   
   .movies {
@@ -1788,8 +1788,8 @@ h4 {
 @media (max-width: 480px) {
   
   nav ul li a {
-    font-size: 10px;
-    padding: 1;
+    font-size: 15px;
+    padding: 5;
   }
   
   .movies {
