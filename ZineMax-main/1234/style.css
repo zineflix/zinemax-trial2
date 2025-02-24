@@ -1660,16 +1660,16 @@ background-color: #000000; /* Darker green on hover */
   line-height: 1;  /* Adjust line height for tighter spacing */
 }
 
-/* Styles for the "TV-SERIES" text */
+/* Styles for the "TV-SHOWS" text */
 .tv-shows {
   font-family: "Electronica Display Outline";  
   font-size: 25px;  /* Default font size */
-  color: white;  /* White color for TV-SERIES */
-  display: inline-block; /* Keep TV-SERIES in one line */
+  color: white;  /* White color for TV-SHOWS */
+  display: inline-block; /* Keep TV-SHOWS in one line */
   vertical-align: top; /* Align to the top */
-  margin-top: 13px;  /* Move "TV-SERIES" a little down */
-  letter-spacing: 1px;  /* Slightly reduce spacing for a tighter look */
-  margin-left: 5px;  /* A little space between "TOP" and "TV-SERIES" */
+  margin-top: 13px;  /* Move "TV-SHOWS" a little down */
+  letter-spacing: -0.5px;  /* Slightly reduce spacing for a tighter look */
+  margin-left: 5px;  /* A little space between "TOP" and "TV-SHOWS" */
   line-height: 1;  /* Adjust line height for tighter spacing */
 }
 
@@ -1756,7 +1756,7 @@ h4 {
     margin-top: 10px;  /* Adjust margin for better spacing */
   }
 
- .tv-series {
+ .tv-shows {
     font-size: 16px;  /* Slightly smaller font for mobile */
     margin-top: 10px;  /* Adjust margin for better spacing */
   }
@@ -1797,7 +1797,7 @@ h4 {
     margin-top: 10px;  /* Further reduce margin */
   }
 
-  .tv-series {
+  .tv-shows {
     font-size: 16px;  /* Even smaller font for very small screens */
     margin-top: 10px;  /* Further reduce margin */
   }
