@@ -509,3 +509,126 @@ window.addEventListener("scroll", function () {
 document.getElementById("menu-btn").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
 });
+
+
+
+/* FOR RESPONSIVE NAVIGATION BAR */
+
+/* Navigation Bar */
+    nav {
+      width: 100%;
+      background: rgba(0, 0, 0, 0); /* Transparent at the top */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Sticky Header when Scrolling */
+    .nav-solid {
+      background-color: rgba(0, 0, 0, 1); /* Solid background when scrolled */
+    }
+
+    /* Logo Style */
+    #logo {
+      max-height: 40px;
+      display: inline-block;
+    }
+
+    /* Navigation Menu (Links) */
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #0296cc;
+    }
+
+
+/* FOR MOBILE 780PX BELOW */
+
+/* Mobile Styles (Screen width below 768px) */
+    @media (max-width: 768px) {
+      /* Navigation links initially hidden on mobile */
+      nav ul {
+        display: none;  /* Hidden by default */
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 50px; /* To place the menu below the nav bar */
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+      /* Active state of the menu */
+      nav.active ul {
+        display: flex; /* Show the menu when active */
+      }
+      nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Logo will adjust for smaller screens */
+      #logo {
+        max-height: 30px;
+      }
+
+      /* Menu Button visible on mobile */
+      .menu-btn {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #0296cc;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: block;  /* Visible on mobile */
+      }
+
+      /* Show menu when active */
+#menu.active {
+    display: flex;
+}
+    }
+
+    /* Hide the menu button on desktop */
+    @media (min-width: 769px) {
+      .menu-btn {
+        display: none;  /* Hide the menu button on desktop */
+      }
+    }
