@@ -485,7 +485,8 @@ window.addEventListener("load", function() {
     }, 1000); // 3000ms = 3 seconds
 });
 
-// FOR RESPONSIVE NAVIGATION HEADER
+//DINAGDAG//
+// For Responsive Header
 window.addEventListener("scroll", function () {
     let nav = document.querySelector("nav");
     if (window.scrollY > 50) {
@@ -509,7 +510,6 @@ window.addEventListener("scroll", function () {
 document.getElementById("menu-btn").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
 });
-
 
 
 
