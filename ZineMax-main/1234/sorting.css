@@ -171,7 +171,7 @@ select {
 }
 
 select:focus {  
-    border-color: #ff9800; /* Highlight border on focus */
+    border-color: #0296cc; /* Highlight border on focus */
     outline: none;
 }
 
@@ -190,7 +190,7 @@ select option {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #333;
+    background-color: #0296cc;
     color: white;
     font-size: 16px;
     padding: 10px 15px;
