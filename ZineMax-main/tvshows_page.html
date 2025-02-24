@@ -143,6 +143,20 @@
 
 
     
+<!--For Navigation Header Mobile-->    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
+</script>
+    
+
+    
 <!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
 <script>  
 // Disable Right-Click
