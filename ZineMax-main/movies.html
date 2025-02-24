@@ -19,17 +19,28 @@
   </head> 
     
   <body>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ8V3HXD2E"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
+  
 
-    gtag('config', 'G-YZ8V3HXD2E');
-  </script>
+<!-- For Header -->  
+<nav>
+    <!-- Logo -->
+    <img id="logo" src="https://zinemax.netlify.app/img/ZineMax.png" alt="Logo">
 
-    <!-- Your other content here -->    
+    <!-- Menu Button (visible only on mobile) -->
+    <span class="menu-btn" id="menu-btn">Menu</span>
+
+<!-- Navigation Menu -->
+    <ul id="menu">
+      <li><a href="index.html" class="active">HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="movies.html">MOVIES <i class="fa fa-film" aria-hidden="true"></i></a></li>
+      <li><a href="tvshows_page.html">TV-SHOWS <i class="fas fa-tv"></i></a></li>
+      <li><a href="sorting.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
+      <li><a href="search.html">SEARCH <i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav>
+    
+ <!-- For Banner -->    
   <header class="banner">
         <div class="banner__contents">
             <h1 class="banner__title">Loading...</h1> <!-- This will be replaced dynamically -->
@@ -41,52 +52,19 @@
                 Loading description...
             </h1> <!-- This will be replaced dynamically -->
         </div>
-
-        <div class="logo-container">
-          <!-- Your Logo -->
-          <img id="logo" class="logo" src="img/ZineMax.png" alt="Logo">
-        </div>      
-
-        <!-- Floating Message -->
+    
+<!-- Floating Message -->
   <div id="floating-message">
     <i class="fa-solid fa-triangle-exclamation"></i><h2>Disclaimer</h2><br>
       This site does not host any files on its server. All content displayed on this site is provided by third-party sites and services. We don't have control on any content, or services provided by their sites. If you have any questions or concerns about the content hosted by third-party sites, please contact the site owner or administrator directly!
       <button onclick="closeMessage()">OK</button>
   </div>      
-    
-<!--Container-->    
-  <div class="icons-container">    
-    <!-- Movies Icon -->
-    <div class="icon">
-        <a href="movies.html">
-            MOVIES <i class="fas fa-film"></i> <!-- Movies Icon -->
-        </a>
-    </div>    
 
-    <!-- TV Shows Icon -->
-    <div class="icon">
-        <a href="tvshows_page.html">
-            TV SHOWS <i class="fas fa-tv"></i> <!-- TV Shows Icon -->
-        </a>
-    </div>
-
-    <!-- Sorting Icon -->
-        <div class="icon">
-        <a href="sorting.html">
-          <i class="fa fa-sort"></i>
-        </a>
-    </div    
-        
-    <!-- Search Icon -->
-    <div class="icon" onclick="openSearchPage()">
-        SEARCH <i class="fas fa-search"></i>
-    </div>    
-    
-  </div>
-    
         <div class="banner--fadeBottom"></div>
-      </header> 
-      
+</header> 
+
+
+<!-- For Movie Poster -->    
       <div class="row">
         <h4>POPULAR<span class="movies">M O V I E S</span></h4> 
             <div class="row__posters" id="popularMovies">
@@ -185,7 +163,9 @@
       <script src="1234/movie.js"></script>
       <script src="1234/tvshows.js"></script>
 
-      <script>
+    
+<!-- For Other Content-->    
+<script>
       // Function to close the message and save the state to localStorage
       function closeMessage() {
           document.getElementById("floating-message").style.display = "none"; // Hide the message
@@ -213,7 +193,7 @@
               }
           }
       }
-  </script>
+</script>
 
  <!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
 <script>  
@@ -252,17 +232,7 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
 }; 
 </script>  
-
- <!--Additional Script-->    
-      <script
-  disable-copy='true'
-  disable-cut='true'
-  disable-paste='true'
-  clear-log='true'
-  disable-devtool-auto
-  disable-menu='false'
-  src='https://cdn.jsdelivr.net/npm/disable-devtool'
-></script>
+  
   </body>
 
   </html>
