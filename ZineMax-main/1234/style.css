@@ -1101,14 +1101,6 @@ body {
   background-color: #030303;
 }
 
-/* Logo styles */
-.logo {
-  width: auto;     /* Adjust logo size */
-  height: 50px;     /* Maintain aspect ratio */
-  position: fixed;
-  top: 0px;        /* Adjust top distance from the page */
-  left: 5px;
-}
 
 /* Style for the "Watch Trailer" heading */
 #movie-trailer-container h3 {
@@ -1753,11 +1745,6 @@ h4 {
 /* Further adjustments for very small screens (e.g., phones in portrait mode) */
 /* Adjust styles for mobile devices */
 @media (max-width: 768px) {
-  .logo {
-    max-width: 90px;
-    height: auto;
-    top: 12.5px;
-  }
   
   nav ul li a {
     font-size: 10px;
@@ -1799,11 +1786,6 @@ h4 {
 
 /* Further adjustments for very small screens (e.g., phones in portrait mode) */
 @media (max-width: 480px) {
-  .logo {
-    max-width: 90px;
-    height: auto;
-    top: 12.5px;
-  }
   
   nav ul li a {
     font-size: 10px;
