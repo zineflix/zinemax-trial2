@@ -434,7 +434,6 @@ document.getElementById("menu-btn").addEventListener("click", function() {
 
 
 //--SCRIPT to Disable Right-Click function and redirect to another page if checking Developers Tools   
-<script>  
 // Disable Right-Click
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
@@ -469,4 +468,4 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
 }; 
-</script> 
+
