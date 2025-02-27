@@ -1800,7 +1800,7 @@ h4 {
 
       /* Logo will adjust for smaller screens */
       #logo {
-        max-height: 25px;
+        max-height: 20px;
       }
 
       /* Menu Button visible on mobile */
