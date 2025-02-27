@@ -288,7 +288,7 @@ body {
 
       /* Logo will adjust for smaller screens */
       #logo {
-        max-height: 30px;
+        max-height: 20px;
       }
 
       /* Menu Button visible on mobile */
