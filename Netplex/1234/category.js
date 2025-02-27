@@ -1,4 +1,4 @@
-const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your API key
+const apiKey = 'a1e72fd93ed59f56e6332813b9f8dcae'; // Your TMDB API key
 const baseUrl = 'https://api.themoviedb.org/3';
 const movieGrid = document.getElementById('movie-grid');
 const contentTypeSelect = document.getElementById('contentType');
@@ -37,7 +37,7 @@ function populateGenreDropdown() {
     });
 }
 
-// Populate the year dropdown with years from 2000 to the current year
+// Populate the year dropdown with years from 1900 to the current year
 function populateYearDropdown() {
     for (let year = currentYear; year >= 1900; year--) {
         const option = document.createElement('option');
