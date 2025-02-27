@@ -39,7 +39,7 @@ function populateGenreDropdown() {
 
 // Populate the year dropdown with years from 2000 to the current year
 function populateYearDropdown() {
-    for (let year = currentYear; year >= 2000; year--) {
+    for (let year = currentYear; year >= 1900; year--) {
         const option = document.createElement('option');
         option.value = year;
         option.textContent = year;
@@ -159,3 +159,33 @@ window.onload = () => {
     populateYearDropdown(); // Populate the year dropdown
     fetchMoviesAndTVShows('both', 'all', 'all', 'popularity.desc'); // Fetch both Movies and TV Shows initially, sorted by popularity
 };
+
+
+
+
+/* FOR RESPONSIVE NAVIGATION BAR START */
+// For Responsive Header
+window.addEventListener("scroll", function () {
+    let nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+        nav.classList.add("nav-solid"); // Solid color after scrolling down
+    } else {
+        nav.classList.remove("nav-solid"); // Transparent at the top
+    }
+});
+
+// For sticky header when scrolling
+    window.addEventListener("scroll", function () {
+      let nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("nav-solid"); // Add solid background when scrolled
+      } else {
+        nav.classList.remove("nav-solid"); // Remove solid background at top
+      }
+    });
+
+    // Toggle menu visibility when menu button is clicked
+document.getElementById("menu-btn").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
+});
+/* FOR RESPONSIVE NAVIGATION BAR END */
