@@ -85,7 +85,7 @@ body {
     font-size: 30px;
     padding: 10px;
     cursor: pointer;
-    z-index: 10; /* Ensure arrows are above the posters */
+    z-index: 20; /* Ensure arrows are above the posters */
     border-radius: 5%;
 }
 
@@ -209,7 +209,7 @@ body {
 
 .section h2 {
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: -10px;
 }
 
 
@@ -217,33 +217,46 @@ body {
 .media-row {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 10px;
     white-space: nowrap;
     scroll-behavior: smooth;
-    padding-bottom: 10px;
+    padding-bottom: 20px; 
+    object-fit: contain;
+    padding-top: 30px;
+    padding-bottom: 25px;
 }
-
 .media-row::-webkit-scrollbar {
     height: 8px;
-    display: none;
+    background: rgba(255, 255, 255, 0.1); /* Light background for visibility */
 }
 
-.media-row::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
+.media-row::--webkit-scrollbark {
+    background: rgba(0, 0, 0, 0.5); /* Track background */
 }
 
 /* Media Items */
 .media-item {
-    cursor: pointer;
     position: relative;
+    display: inline-block;
+    overflow: visible; /* Ensure the enlarged image is not clipped */
 }
 
-.media-item img {
-    width: 205px;
+.poster-card {
+    position: relative;
+    display: inline-block;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Ensures image does not exceed bounds */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+.poster-card:hover {
+    transform: scale(1.1);
+    z-index: 10; /* Ensures it appears above other elements */
+    box-shadow: 0 10px 20px #0296cc;
+}
+
+
 
 /* Mobile Poster Adjustments */
 @media (max-width: 768px) {
