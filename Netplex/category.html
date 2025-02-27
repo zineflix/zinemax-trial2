@@ -1,18 +1,17 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NETPLEX</title>
-    <link rel="stylesheet" href="1234/sorting.css">
-    <link href="https://db.onlinewebfonts.com/c/25ee966fb81cd61ffdfb393e81c7bf4b?family=Electronica+Display+Outline" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="1234/category.css">
+</head> 
+    
 <body>
 
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 
   
- <!-- FOR RESPONSIVE NAVIGATION BAR START -->  
+<!-- FOR RESPONSIVE NAVIGATION BAR START -->  
 <nav>
     <!-- Logo -->
     <img id="logo" src="https://netplex.pages.dev/img/netplex.png" alt="NETPLEX">
@@ -25,19 +24,17 @@
       <li><a href="index.html">HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
       <li><a href="movies.html">MOVIES <i class="fa fa-film" aria-hidden="true"></i></a></li>
       <li><a href="tvshows_page.html">TV-SHOWS <i class="fas fa-tv"></i></a></li>
-      <li><a href="sorting.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
+      <li><a href="category.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
       <li><a href="search.html">SEARCH <i class="fa fa-search" aria-hidden="true"></i></a></li>
     </ul>
   </nav> 
- <!-- FOR RESPONSIVE NAVIGATION BAR START --> 
+ <!-- FOR RESPONSIVE NAVIGATION BAR END --> 
 
     <div class="container">
         <h1>CATEGORY</h1>
         
-
-
-        <!-- Get Randomized Button -->
-        <button onclick="getRandomizedContent()" class="get-random-btn">Get Randomized Movies / TV Shows</button>
+        <!-- Try Random Button -->
+        <button onclick="getRandomizedContent()" class="get-random-btn">Try Random Movies / TV Shows</button>
 
         <!-- Flex container for the dropdowns -->
         <div class="dropdown-container">
@@ -69,13 +66,13 @@
                 </select>
             </div>
 
-            <!-- Dropdown for sorting -->
+            <!-- Dropdown for Category -->
             <div class="dropdown">
                 <label for="sortSelect"></label>
                 <select id="sortSelect" onchange="onSortChange()">
-                    <option value="popularity.desc">Popularity (High to Low)</option>
+                    <option value="popularity.desc">Popularity (Descending-Ascending)</option>
                     <option value="release_date.desc">Release Date (Newest to Oldest)</option>
-                    <option value="vote_average.desc">Rating (High to Low)</option>
+                    <option value="vote_average.desc">Rating (Descending-Ascending)</option>
                 </select>
             </div>
         </div>
@@ -85,24 +82,21 @@
         </div>
     </div>
 
-    <script src="1234/sorting.js"></script>
+    <script src="1234/category.js"></script>
 
-    <!-- JavaScript for Go Back functionality -->
-    <script>
-        function goBack() {
-            window.history.back(); // Go back to the previous page in the browser history
-        }
+<!-- JavaScript for Go Back functionality -->
+<script>
 
         // JavaScript function for the "Get Randomized Movies / TV Shows" button
         function getRandomizedContent() {
             // Redirect to collection.html (randomized movies or TV shows will be handled in that page)
             window.location.href = 'collection.html';
         }
-    </script>
+ </script>
 
     
 
-<!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools START-->
+<!--SCRIPT to Disable Right-Click function and redirect to another page if checking Developers Tools START-->
 <script>  
 // Disable Right-Click
 document.addEventListener('contextmenu', function (event) {
@@ -139,7 +133,7 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
 }; 
 </script>  
-<!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools END-->
+<!--SCRIPT to Disable Right-Click function and redirect to another page if checking Developers Tools END-->
 
 </body>
 </html>
