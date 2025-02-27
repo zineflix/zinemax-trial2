@@ -474,12 +474,11 @@ body {
 /* Close button (X) */
 .close-button {
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 20px;
-  font-size: 5rem;
+  font-size: 6rem;
   background: transparent;
   border: none;
-  color: red;
   cursor: pointer;
   z-index: 10;
   transition: color 0.3s ease;
@@ -490,7 +489,7 @@ body {
 }
 .close-text {
     font-size: 16px;
-    color: blue;
+    color: red;
     font-weight: bold;
     text-transform: uppercase;
 }
