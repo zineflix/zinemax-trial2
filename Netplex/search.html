@@ -1,29 +1,44 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NETPLEX</title>
-  <link rel="stylesheet" href="css/1234-swiper.css"> <!-- Link to the external CSS -->
-  <link href="https://db.onlinewebfonts.com/c/25ee966fb81cd61ffdfb393e81c7bf4b?family=Electronica+Display+Outline" rel="stylesheet">
+  <link rel="stylesheet" href="css/search.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Link to the external CSS -->
 </head>
 <body>
 
   <!-- Google tag (gtag.js) -->
 
+ <!-- FOR RESPONSIVE NAVIGATION BAR START -->  
+<nav>
+    <!-- Logo -->
+    <img id="logo" src="https://netplex.pages.dev/img/netplex.png" alt="NETPLEX">
+
+    <!-- Menu Button (visible only on mobile) -->
+    <span class="menu-btn" id="menu-btn">Menu</span>
+
+    <!-- Navigation Menu -->
+    <ul id="menu">
+      <li><a href="index.html">HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="movies.html">MOVIES <i class="fa fa-film" aria-hidden="true"></i></a></li>
+      <li><a href="tvshows_page.html">TV-SHOWS <i class="fas fa-tv"></i></a></li>
+      <li><a href="sorting.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
+      <li><a href="search.html">SEARCH <i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav> 
+ <!-- FOR RESPONSIVE NAVIGATION BAR START --> 
 
   <div class="container">
     <header>
-      <!-- Go Back button -->
-      <button class="go-back-btn" onclick="window.history.back()">Go Back</button>
-
-      <h1>Search Movies &amp; TV Shows</h1>
+      <h1>Search Movies, TV Shows & Anime</h1>
       <input type="text" id="search" placeholder="Search for movies or TV shows...">
     </header>
 
     <!-- Recommendation text -->
     <div id="recommendation-text">
-      <p>Recommend Movies and TV Shows</p>
+      <p>Recommended For You</p>
     </div>
 
     <!-- Movie grid -->
