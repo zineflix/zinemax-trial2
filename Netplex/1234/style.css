@@ -816,7 +816,7 @@ body {
 
 #watch-now-btn {
   position: relative;
-  z-index: 10000; /* Make sure it's above the iframe */
+  z-index: 900; /* Make sure it's above the iframe */
 }
 
 /* Styling for the Close button */
@@ -1961,7 +1961,6 @@ h4 {
 #floating-message {
 position: fixed;
 top: 25%;
-bottom: 0;
 left: 50%;
 transform: translateX(-50%);
 background-color: #121212;
