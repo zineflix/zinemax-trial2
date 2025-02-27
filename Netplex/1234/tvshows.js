@@ -518,3 +518,10 @@ window.addEventListener("load", function() {
 document.getElementById("menu-btn").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
 });
+
+
+
+// For Floating Message Close Function
+function closeMessage() {
+        document.getElementById("floating-message").style.display = "none";
+    }
