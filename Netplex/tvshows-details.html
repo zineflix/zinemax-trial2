@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	 <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <link rel="apple-touch-icon" href="img/ZineMax_1.png">
+      <title>NETPLEX</title>
+      <link rel="stylesheet" href="1234/style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="manifest" href="manifest.json">
+      <link rel="preload" href="1234/style.css" as="style">
+      <link rel="preload" href="1234/tvshows.js" as="tvshows">
+  </head>  
+	
+<body>
+<!-- Google tag (gtag.js) -->
+
+
+
+     <!-- Loading Screen -->
+     <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading...</p> <!-- Add this text -->
+    </div>
+
+    <div class="blurred-background"></div> <!-- Background Container -->
+    
+    <div class="tv-show-details">
+        <!-- Close Button (X) for the main UI -->
+        <button class="close-button" id="close-button">&times;</button>
+
+        <!-- Poster Container -->
+        <div class="tv-show-poster-container">
+            <img id="tv-show-poster" alt="TV Show Poster" class="tv-show-poster" src="images/https://zinemax.netlify.app">
+            <!-- Button Container -->
+            <div id="season-btn-container">
+                <div id="season-btn">Select Season</div>
+            <ul id="seasons-list" class="dropdown-list"></ul>
+            <button id="episode-btn" style="display: none;">Select Episode</button>
+            <ul id="episodes-list" class="dropdown-list"></ul>
+            </div>            
+        </div>
+
+        <h1 id="tv-show-title"></h1>
+        <p id="tv-show-description"></p>
+
+        <!-- Genre Section -->
+        <div class="tv-show-genres" id="tv-show-genres"></div>
+
+        <div class="tv-show-info">
+            <div class="tv-show-rating" id="tv-show-rating"></div>
+            <div class="tv-show-first-air-date" id="tv-show-first-air-date">
+                <i class="fas fa-calendar-alt"></i> <!-- Calendar Icon -->
+                <span id="air-date-text"></span> <!-- Air Date Text -->
+              </div>  
+             </div> 	    
+
+        <!-- Season Dropdown (Initially Hidden) -->
+        <div id="seasons-dropdown" class="seasons-dropdown" style="display: none;">
+            <ul id="seasons-list"></ul>
+        </div>
+        
+        <!-- Episode Dropdown (Initially Hidden) -->
+        <div id="episodes-dropdown" class="episodes-dropdown" style="display: none;">
+            <ul id="episodes-list"></ul>
+        </div>
+    </div>
+
+  <!-- Iframe Container for watching the show -->
+<div id="iframe-container" style="display: none;">
+    <div class="iframe-controls">     
+    </div>
+
+    <iframe id="movie-iframe" width="100%" height="100%" frameborder="0" allowfullscreen="" referrerpolicy="origin" scrolling="no" sandbox="allow-scripts allow-same-origin"></iframe>
+
+    <!-- Close Button for iframe container -->
+    <button id="close-iframe-btn">Close</button>
+
+    <!-- Change Server Button -->
+    <button id="change-server-btn">Change Server</button>
+
+    <!-- Server dropdown list (Initially Hidden) -->
+    <div id="server-dropdown" class="server-dropdown" style="display:none;">
+        <ul id="server-list">
+            <!-- List of servers will be dynamically populated -->
+        </ul>
+    </div>
+</div>
+
+    <script src="1234/tvshows.js"></script> <!-- External JS file for TV show details -->
+
+
+	
+<!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
+<script>  
+// Disable Right-Click
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+// Disable Keyboard Shortcuts (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+document.addEventListener('keydown', function (event) {
+    if (event.key === "F12" || 
+        (event.ctrlKey && event.shiftKey && event.key === "I") || 
+        (event.ctrlKey && event.shiftKey && event.key === "J") || 
+        (event.ctrlKey && event.key === "U")) {
+        event.preventDefault();
+    }
+});
+
+// Redirect to Google if DevTools is Opened
+setInterval(function(){
+    if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200){
+        window.location.href = "https://www.effectiveratecpm.com/w6gnwauzb?key=4d8f595f0136eea4d9e6431d88f478b5"; // Redirect to Adsterra Ads
+    }
+}, 1000);
+
+// Prevent iFrame Embedding (Clickjacking Protection)
+if (window !== window.top) {
+    window.top.location = window.location;
+}
+
+// Prevent Viewing Page Source
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) { return false; } // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { return false; } // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
+}; 
+</script>  
+
+ 
+</body>
+</html>
