@@ -11,12 +11,30 @@
 
     <!-- Google tag (gtag.js) -->
 
+  
+ <!-- FOR RESPONSIVE NAVIGATION BAR START -->  
+<nav>
+    <!-- Logo -->
+    <img id="logo" src="https://netplex.pages.dev/img/netplex.png" alt="NETPLEX">
+
+    <!-- Menu Button (visible only on mobile) -->
+    <span class="menu-btn" id="menu-btn">Menu</span>
+
+    <!-- Navigation Menu -->
+    <ul id="menu">
+      <li><a href="index.html">HOME <i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="movies.html">MOVIES <i class="fa fa-film" aria-hidden="true"></i></a></li>
+      <li><a href="tvshows_page.html">TV-SHOWS <i class="fas fa-tv"></i></a></li>
+      <li><a href="sorting.html">SORT BY <i class="fa fa-sort" aria-hidden="true"></i></a></li>
+      <li><a href="search.html">SEARCH <i class="fa fa-search" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav> 
+ <!-- FOR RESPONSIVE NAVIGATION BAR START --> 
 
     <div class="container">
-        <h1>Discovery</h1>
+        <h1>CATEGORY</h1>
         
-        <!-- Go Back Button -->
-        <button onclick="goBack()" class="go-back-btn">Go Back</button>
+
 
         <!-- Get Randomized Button -->
         <button onclick="getRandomizedContent()" class="get-random-btn">Get Randomized Movies / TV Shows</button>
@@ -82,7 +100,9 @@
         }
     </script>
 
-   <!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
+    
+
+<!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools START-->
 <script>  
 // Disable Right-Click
 document.addEventListener('contextmenu', function (event) {
@@ -119,7 +139,7 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
 }; 
 </script>  
-
+<!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools END-->
 
 </body>
 </html>
