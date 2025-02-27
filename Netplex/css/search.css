@@ -104,7 +104,7 @@ body {
     position: relative;
     overflow: hidden; /* Ensures that the poster stays within the bounds of the container */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px #0296cc;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
   }
   
