@@ -1624,13 +1624,7 @@ h4 {
 
 /* Further adjustments for very small screens (e.g., phones in portrait mode) */
 /* Adjust styles for mobile devices */
-@media (max-width: 768px) {
-  
-  nav ul li a {
-    font-size: 15px;
-    padding: 5;
-  }
-  
+@media (max-width: 768px) { 
   .movies {
     font-size: 16px;  /* Slightly smaller font for mobile */
     margin-top: 10px;  /* Adjust margin for better spacing */
@@ -1666,12 +1660,6 @@ h4 {
 
 /* Further adjustments for very small screens (e.g., phones in portrait mode) */
 @media (max-width: 480px) {
-  
-  nav ul li a {
-    font-size: 15px;
-    padding: 5;
-  }
-  
   .movies {
     font-size: 16px;  /* Even smaller font for very small screens */
     margin-top: 10px;  /* Further reduce margin */
