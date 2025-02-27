@@ -1960,7 +1960,8 @@ h4 {
 /* Floating Message */
 #floating-message {
 position: fixed;
-top: 25%
+top: 25%;
+bottom: 0;
 left: 50%;
 transform: translateX(-50%);
 background-color: #121212;
