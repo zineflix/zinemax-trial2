@@ -171,7 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <!--For Chat With Us Function End-->
-    
+
+<!--For App Install-->
+<script>
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(() => console.log('Service Worker registered'));
+}
+</script>    
 
 <!--Script to Disable Right-Click function and redirect to another page if checking Developers Tools-->
 <script>  
