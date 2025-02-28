@@ -51,6 +51,7 @@ html {
     transform: scale(1.09);
   }
   
+
   .row {
     color: white;
     margin-left: 20px;
@@ -1833,6 +1834,8 @@ h4 {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    z-index: 20; /* Ensures it stays above other elements */
+    transition: opacity 0.3s ease-in-out;
 }
 
 .movie-rating i {
@@ -1851,6 +1854,8 @@ h4 {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    z-index: 20; /* Ensures it stays above other elements */
+    transition: transform 0.3s ease-in-out;
 }
 
 .tv-show-rating i {
@@ -2059,4 +2064,17 @@ background-color: #0296cc; /* Darker green on hover */
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.2);
     animation: galaxyGlow 1.5s infinite alternate;
+}
+
+
+.tv-show-card, .movie-card {
+    position: relative;
+    overflow: visible;
+}
+
+.row__poster:hover + .tv-show-rating, 
+.row__poster:hover + .movie-rating {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 30;
 }
