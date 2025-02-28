@@ -172,6 +172,7 @@ select {
     cursor: pointer;
     width: 100%;
     text-overflow: ellipsis; /* Ensure long text does not overflow */
+    border-color: #0296cc;
 }
 
 .select-container {
