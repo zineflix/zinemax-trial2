@@ -52,22 +52,7 @@
     <h>
         This site does not host any files on its server. All content displayed on this site is provided by third-party sites and services. We don't have control over any content or services provided by their sites. If you have any questions or concerns about the content hosted by third-party sites, please contact the site owner directly!
     </h>
-    <button onclick="closeMessage()">OK</button>
-    <button id="installApp">Install App</button>
-<script>
-  let deferredPrompt;
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-  });
-
-  document.getElementById('installApp').addEventListener('click', () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-    }
-  });
-</script>
-  
+    <button onclick="closeMessage()">OK</button>      
 </div>  
     </header>
     
