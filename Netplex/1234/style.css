@@ -2054,4 +2054,9 @@ background-color: #0296cc; /* Darker green on hover */
     font-size: 30px;
 }
 
-
+/* Hover Effect */
+.tv-show-card:hover .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+    animation: galaxyGlow 1.5s infinite alternate;
+}
