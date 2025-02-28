@@ -44,13 +44,16 @@ async function fetchMedia(url, containerId, type) {
         const rating = item.vote_average.toFixed(1);
 
         mediaItem.innerHTML = `
-            <div class="poster-card">
-                <div class="rating">
-                    <span class="star"><i class="fas fa-star"></i></span> <span class="rating-number">${rating}</span>
-                </div>
-                <img src="${imgURL + item.poster_path}" alt="${item.title || item.name}">
-            </div>
-        `;
+    <div class="poster-card">
+        <div class="rating">
+            <span class="star"><i class="fas fa-star"></i></span> <span class="rating-number">${rating}</span>
+        </div>
+        <img src="${imgURL + item.poster_path}" alt="${item.title || item.name}">
+        <div class="play-button">
+            <i class="fas fa-play"></i>
+        </div>
+    </div>
+`;
         
         mediaItem.addEventListener("click", () => {
             window.location.href = type === "movie" 
