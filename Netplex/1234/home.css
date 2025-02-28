@@ -540,3 +540,41 @@ background-color: #0296cc; /* Darker green on hover */
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
+
+
+/* Galaxy Glow Play Button Overlay */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #551A8B, #000);
+    color: white;
+    font-size: 28px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 0 15px violet;
+}
+
+/* Swirling Galaxy Effect */
+@keyframes galaxyGlow {
+    0% { box-shadow: 0 0 15px violet; }
+    50% { box-shadow: 0 0 30px blue; }
+    100% { box-shadow: 0 0 15px violet; }
+}
+
+.poster-card:hover .play-button {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+    animation: galaxyGlow 1.5s infinite alternate;
+}
+
+.play-button i {
+    font-size: 30px;
+}
