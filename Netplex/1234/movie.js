@@ -60,6 +60,12 @@ const fetchMovies = async (category, rowId) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieCard.style.position = 'relative';
+              
+    // Create the play button
+const playButton = document.createElement('div');
+playButton.classList.add('play-button');
+playButton.innerHTML = '<i class="fas fa-play"></i>';
+
 
     // Movie poster
     const moviePoster = document.createElement('img');
@@ -75,6 +81,7 @@ const fetchMovies = async (category, rowId) => {
     // Append elements to the movie card
     movieCard.appendChild(rating);
     movieCard.appendChild(moviePoster);
+    movieCard.appendChild(playButton);          
 
     // Click event to navigate to details page
     movieCard.addEventListener('click', () => {
@@ -521,3 +528,5 @@ document.onkeydown = function(e) {
     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { return false; } // Ctrl+Shift+J
     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; } // Ctrl+U
 }; 
+
+
