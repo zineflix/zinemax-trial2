@@ -58,6 +58,11 @@ const fetchTVShows = async (category, rowId) => {
     tvShowCard.classList.add('tv-show-card');
     tvShowCard.style.position = 'relative';
 
+    // Create the play button
+    const playButton = document.createElement('div');
+    playButton.classList.add('play-button');
+    playButton.innerHTML = '<i class="fas fa-play"></i>';
+                
     // Tv Show poster
     const tvShowPoster = document.createElement('img');
     tvShowPoster.classList.add('row__poster');
@@ -72,6 +77,7 @@ const fetchTVShows = async (category, rowId) => {
     // Append elements to the Tv Show card
     tvShowCard.appendChild(rating);
     tvShowCard.appendChild(tvShowPoster);
+    tvShowCard.appendChild(playButton);            
 
     // Click event to navigate to details page
     tvShowCard.addEventListener('click', () => {
