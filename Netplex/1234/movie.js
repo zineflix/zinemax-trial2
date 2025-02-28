@@ -79,8 +79,8 @@ playButton.innerHTML = '<i class="fas fa-play"></i>';
     rating.innerHTML = `<i class="fas fa-star"></i> ${movie.vote_average.toFixed(1)}`; // Star icon with rating
 
     // Append elements to the movie card
-    movieCard.appendChild(rating);
     movieCard.appendChild(moviePoster);
+    movieCard.appendChild(rating);
     movieCard.appendChild(playButton);          
 
     // Click event to navigate to details page
