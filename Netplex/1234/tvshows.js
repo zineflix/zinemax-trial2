@@ -75,8 +75,8 @@ const fetchTVShows = async (category, rowId) => {
     rating.innerHTML = `<i class="fas fa-star"></i> ${tvShow.vote_average.toFixed(1)}`; // Star icon with rating
 
     // Append elements to the Tv Show card
-    tvShowCard.appendChild(rating);
     tvShowCard.appendChild(tvShowPoster);
+    tvShowCard.appendChild(rating);
     tvShowCard.appendChild(playButton);            
 
     // Click event to navigate to details page
