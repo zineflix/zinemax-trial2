@@ -174,9 +174,6 @@ const fetchBanner = async () => {
         // Play Button Functionality
         // ----------------------
 
-        // Get the Play button
-        const playButton = document.getElementById('play-button');
-
         // Add event listener to the Play button to navigate to movie details
         playButton.addEventListener('click', () => {
             window.location.href = `movie-details.html?movie_id=${movie.id}`;
